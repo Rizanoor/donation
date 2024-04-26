@@ -37,7 +37,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
                             <a href="service.html" class="dropdown-item">Service</a>
-                            <a href="donate.html" class="dropdown-item">Donate</a>
+                            <a href="{{route('donate')}}" class="dropdown-item">Donate</a>
                             <a href="team.html" class="dropdown-item">Our Team</a>
                             <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             <a href="404.html" class="dropdown-item">404 Page</a>
@@ -46,7 +46,7 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-outline-primary py-2 px-3" href="">
+                    <a class="btn btn-outline-primary py-2 px-3" href="{{route('donate')}}">
                         Donate Now
                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                             <i class="fa fa-arrow-right"></i>
