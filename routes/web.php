@@ -6,6 +6,7 @@ use App\Http\Controllers\ContacController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurTeamController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -18,4 +19,5 @@ Route::get('causes', [CausesController::class, 'index'])->name('causes');
 Route::get('donation', [DonateController::class, 'index'])->name('donate');
 Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');
+Route::get('service', [ServiceController::class, 'index'])->name('service');
 
