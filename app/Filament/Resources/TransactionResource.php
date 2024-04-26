@@ -2,33 +2,28 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ProductResource\Pages;
-use App\Filament\Resources\ProductResource\RelationManagers;
-use App\Models\Category;
+use App\Filament\Resources\TransactionResource\Pages;
+use App\Filament\Resources\TransactionResource\RelationManagers;
 use App\Models\Product;
+use App\Models\Transaction;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ProductResource extends Resource
+class TransactionResource extends Resource
 {
-    protected static ?string $model = Product::class;
+    protected static ?string $model = Transaction::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-clipboard-document';
+    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
 
     public static function form(Form $form): Form
     {
@@ -41,14 +36,14 @@ class ProductResource extends Resource
                     '2xl' => 1,
                 ])
                     ->schema([
-                        TextInput::make('name')->required(),
-                        Select::make('categories_id')
-                            ->label('Category')
-                            ->options(Category::all()->pluck('name', 'id')),
-                        RichEditor::make('thumbnail_description')->required(),
+                        TextInput::make('username')->label('username')->required(),
+                        TextInput::make('email')->required(),
+                        Select::make('products_id')
+                            ->label('Product')
+                            ->options(Product::all()->pluck('name', 'id'))
+                            ->required(),
                         RichEditor::make('description')->required(),
-                        Textarea::make('goal_price')->required(),
-                        SpatieMediaLibraryFileUpload::make('photos'),
+                        TextInput::make('donate_price')->required()
                     ])
             ]);
     }
@@ -57,10 +52,11 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('category.name')->sortable()->searchable(),
-                TextColumn::make('goal_price')->sortable()->searchable()->money('IDR'),
-                SpatieMediaLibraryImageColumn::make('photos')
+                TextColumn::make('username')->sortable()->searchable(),
+                TextColumn::make('email')->sortable()->searchable(),
+                TextColumn::make('product.name')->sortable()->searchable(),
+                TextColumn::make('donate_price')->sortable()->searchable()->money('IDR'),
+
             ])
             ->filters([
                 //
@@ -86,9 +82,9 @@ class ProductResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListProducts::route('/'),
-            'create' => Pages\CreateProduct::route('/create'),
-            'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'index' => Pages\ListTransactions::route('/'),
+            'create' => Pages\CreateTransaction::route('/create'),
+            'edit' => Pages\EditTransaction::route('/{record}/edit'),
         ];
     }
 }
