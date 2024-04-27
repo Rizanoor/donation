@@ -60,6 +60,7 @@ class ProductResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('category.name')->sortable()->searchable(),
                 TextColumn::make('goal_price')->sortable()->searchable()->money('IDR'),
+                TextColumn::make('current_price')->sortable()->searchable()->money('IDR'),
                 SpatieMediaLibraryImageColumn::make('photos')
             ])
             ->filters([
