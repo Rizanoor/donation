@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CausesController extends Controller
 {
     public function index() 
     {
-        return view('pages.causes');
+        $products = Product::with(['category'])->get();
+
+        return view('pages.causes',[
+            'products'    => $products
+        ]);
     }
 }
