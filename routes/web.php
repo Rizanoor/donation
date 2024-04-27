@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('causes', [CausesController::class, 'index'])->name('causes');
+
 Route::get('donation', [DonateController::class, 'index'])->name('donate');
+Route::post('donation/store', [DonateController::class, 'store'])->name('donate.store');
+
 Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');
 Route::get('service', [ServiceController::class, 'index'])->name('service');

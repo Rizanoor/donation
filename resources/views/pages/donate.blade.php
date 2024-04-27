@@ -32,30 +32,43 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-secondary p-5">
-                        <form>
+                        <form method="post" action="{{route('donate.store')}}" enctype="multipart/form-data">
+                            @csrf
+
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-light border-0" name="username" id="username" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-light border-0" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                    <div class="form-floating">
+                                        <select id="products_id" name="products_id"
+                                            class="form-control bg-light border-0" style="padding-top: 0 !important; padding-bottom: 0 !important">
+                                            <option value="">Choose Campaign</option>
+                                            @foreach ($product as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked>
-                                        <label class="btn btn-light py-3" for="btnradio1">$10</label>
+                                        <input type="radio" class="btn-check" name="donate_price" id="donate_price1" value="10000" checked>
+                                        <label class="btn btn-light py-3" for="donate_price1">$10</label>
 
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
-                                        <label class="btn btn-light py-3" for="btnradio2">$20</label>
+                                        <input type="radio" class="btn-check" name="donate_price" value="20000" id="donate_price2">
+                                        <label class="btn btn-light py-3" for="donate_price2">$20</label>
 
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
-                                        <label class="btn btn-light py-3" for="btnradio3">$30</label>
+                                        <input type="radio" class="btn-check" name="donate_price" value="30000" id="donate_price3">
+                                        <label class="btn btn-light py-3" for="donate_price3">$30</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
