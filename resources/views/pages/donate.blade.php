@@ -38,13 +38,13 @@
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-light border-0" name="username" id="username" placeholder="Your Name">
+                                        <input type="text" class="form-control bg-light border-0" name="username" id="username" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('products_id');
             $table->string('username');
-            $table->string('email')->unique()->nullable();
+            $table->string('email')->nullable();
             $table->longText('description')->nullable();
             $table->integer('donate_price');
 

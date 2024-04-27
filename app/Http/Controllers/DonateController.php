@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransactionRequest;
 use App\Models\Product;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class DonateController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
         $data = $request->all();
  
