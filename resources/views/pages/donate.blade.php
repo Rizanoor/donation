@@ -62,13 +62,13 @@
                                 <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
                                         <input type="radio" class="btn-check" name="donate_price" id="donate_price1" value="10000" checked>
-                                        <label class="btn btn-light py-3" for="donate_price1">$10</label>
+                                        <label class="btn btn-light py-3" for="donate_price1">Rp.10.000</label>
 
                                         <input type="radio" class="btn-check" name="donate_price" value="20000" id="donate_price2">
-                                        <label class="btn btn-light py-3" for="donate_price2">$20</label>
+                                        <label class="btn btn-light py-3" for="donate_price2">Rp.20.000</label>
 
                                         <input type="radio" class="btn-check" name="donate_price" value="30000" id="donate_price3">
-                                        <label class="btn btn-light py-3" for="donate_price3">$30</label>
+                                        <label class="btn btn-light py-3" for="donate_price3">Rp.30.000</label>
                                     </div>
                                 </div>
                                 <div class="col-12">

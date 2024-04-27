@@ -19,6 +19,8 @@ Route::get('causes', [CausesController::class, 'index'])->name('causes');
 
 Route::get('donation', [DonateController::class, 'index'])->name('donate');
 Route::post('donation/store', [DonateController::class, 'store'])->name('donate.store');
+Route::get('/success', [DonateController::class, 'success'])->name('success');
+
 
 Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');

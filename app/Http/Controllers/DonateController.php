@@ -32,6 +32,11 @@ class DonateController extends Controller
 
         Transaction::create($data);
 
-        return redirect()->route('home');
+        return redirect()->route('success');
+    }
+
+    public function success()
+    {
+        return view('pages.success');
     }
 }
