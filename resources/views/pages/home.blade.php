@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="position-relative mt-auto">
-                                <img class="img-fluid" src="assets/img/courses-1.jpg" alt="">
+                                <img class="img-fluid" src="{{Storage::url($item->photos)}}" alt="">
                                 <div class="causes-overlay">
                                     <a class="btn btn-outline-primary" href="">
                                         Read More

@@ -48,7 +48,7 @@ class ProductResource extends Resource
                         RichEditor::make('thumbnail_description')->required(),
                         RichEditor::make('description')->required(),
                         Textarea::make('goal_price')->required(),
-                        SpatieMediaLibraryFileUpload::make('photos'),
+                        FileUpload::make('photos'),
                     ])
             ]);
     }
@@ -61,7 +61,7 @@ class ProductResource extends Resource
                 TextColumn::make('category.name')->sortable()->searchable(),
                 TextColumn::make('goal_price')->sortable()->searchable()->money('IDR'),
                 TextColumn::make('current_price')->sortable()->searchable()->money('IDR'),
-                SpatieMediaLibraryImageColumn::make('photos')
+                ImageColumn::make('photos')
             ])
             ->filters([
                 //
